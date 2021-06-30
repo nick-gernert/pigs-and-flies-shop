@@ -1,0 +1,7 @@
+<template>
+  <footer class="text-gray-200 bg-gray-800 flex h-24">
+    <div class="m-auto">
+      <span class="text-2xl">Artwork by Audrey & Katelynn</span>
+    </div>
+  </footer>
+</template>

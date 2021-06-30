@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "name": "Beautiful Butterfly",
+    "price": 100,
+    "description": "",
+    "image": "img/butterfly.svg"
+  },
+  {
+    "id": "2",
+    "name": "White Guinea Pig",
+    "price": 100,
+    "description": "",
+    "image": "img/white-with-brown.svg"
+  },
+  {
+    "id": "3",
+    "name": "Black Guinea Pig",
+    "price": 100,
+    "description": "",
+    "image": "img/max.svg"
+  },
+  {
+    "id": "4",
+    "name": "Hairy Guinea Pig",
+    "price": 100,
+    "description": "",
+    "image": "img/hairy.svg"
+  }
+]
