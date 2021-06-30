@@ -12,16 +12,11 @@
           </template>
         </ShopCardTitle>
         <p class="max-w-xl my-8">{{ product.description }}</p>
-        <button class="p-2 text-lg cursor-pointer bg-blue-200 text-right">
-          Add to Cart
-        </button>
-        <!-- <ShopButton
+        <ShopButton
           type="button"
           label="Add to Cart"
-          colorClass="bg-green-200"
-          hoverClass="hover:bg-green-300"
           @click="addToCart"
-        /> -->
+        />
       </ShopCard>
     </div>
   </div>

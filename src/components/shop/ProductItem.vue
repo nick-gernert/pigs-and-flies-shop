@@ -10,8 +10,6 @@
         <ShopButton
           type="button"
           label="Add to Cart"
-          colorClass="bg-green-200"
-          hoverClass="hover:bg-green-300"
           @click="addToCart"
         />
       </div>
