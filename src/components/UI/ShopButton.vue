@@ -1,7 +1,7 @@
 <template>
   <button
     :type="type"
-    class="p-2 block w-full text-lg cursor-pointer bg-blend-darken"
+    class="p-2 block w-full text-lg cursor-pointer"
     @click="handleClick"
     :class="[colorClass, hoverClass]">
     {{ label }}

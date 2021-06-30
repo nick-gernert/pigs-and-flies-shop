@@ -1,11 +1,17 @@
 <template>
-  <div></div>
+  <ProductDetails />
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import ProductDetails from '@/components/details/ProductDetails.vue';
 
-@Component
+@Component({
+  name: 'Details',
+  components: {
+    ProductDetails,
+  },
+})
 export default class extends Vue {}
 </script>
 
