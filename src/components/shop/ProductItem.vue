@@ -10,7 +10,7 @@
         <ShopButton
           type="button"
           label="Add to Cart"
-          @click="addToCart"
+          @click="handleAddToCart"
         />
       </div>
     </div>
@@ -19,11 +19,15 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
 import ShopCard from '@/components/UI/ShopCard.vue';
 import ShopButton from '@/components/UI/ShopButton.vue';
 import { ShopProduct } from '@/models/product';
 
+const shop = namespace('shop');
+
 @Component({
+  name: 'ProductItem',
   components: {
     ShopCard,
     ShopButton,
@@ -31,6 +35,9 @@ import { ShopProduct } from '@/models/product';
 })
 export default class ProductItem extends Vue {
   @Prop() product!: ShopProduct;
+
+  @shop.Action
+  addToCart!: (product: ShopProduct) => void;
 
   get detailsLink(): string {
     return `/details/${this.product.id}`;
@@ -44,10 +51,10 @@ export default class ProductItem extends Vue {
     this.$router.push(`${this.detailsLink}`);
   }
 
-  addToCart(e: Event): void {
+  handleAddToCart(e: Event): void {
     e.stopPropagation();
 
-    console.log(this.product);
+    this.addToCart(this.product);
   }
 }
 </script>

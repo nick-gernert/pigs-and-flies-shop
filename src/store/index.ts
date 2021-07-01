@@ -1,19 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { ShopProduct } from '@/models/product';
-import { State } from './state';
+import ShopModule from './modules/shop';
 
 Vue.use(Vuex);
 
+// Declare empty store first, dynamically register all modules later.
 export default new Vuex.Store({
-  // state: {
-  //   products: [],
-  //   cartItems: [],
-  // } as State,
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    shop: ShopModule,
   },
 });

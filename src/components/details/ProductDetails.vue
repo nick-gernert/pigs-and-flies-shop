@@ -1,9 +1,9 @@
 <template>
-  <div class="flex">
+  <div class="flex my-auto" v-if="product">
     <div class="w-1/2 flex">
       <img :src="product.image" class="m-auto w-1/2" :alt="product.name" />
     </div>
-    <div class="flex w-1/2">
+    <div class="flex w-1/2 mx-4">
       <ShopCard class="m-auto bg-pink-200 border-2 border-indigo-500">
         <ShopCardTitle>
           {{ product.name }}
@@ -15,7 +15,7 @@
         <ShopButton
           type="button"
           label="Add to Cart"
-          @click="addToCart"
+          @click="handleAddToCart"
         />
       </ShopCard>
     </div>
@@ -23,18 +23,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
 import ShopCard from '@/components/UI/ShopCard.vue';
 import ShopCardTitle from '@/components/UI/ShopCardTitle.vue';
 import ShopButton from '@/components/UI/ShopButton.vue';
+import { ShopProduct } from '@/models/product';
 
-const PRODUCT = {
-  id: '1',
-  name: 'Beautiful Butterfly',
-  price: 10,
-  description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere veritatis necessitatibus distinctio rerum totam ad fugit voluptate eligendi. Eaque laboriosam animi sed. Ut sapiente est, corrupti alias debitis voluptate amet.',
-  image: '/img/butterfly.svg',
-};
+const shop = namespace('shop');
 
 @Component({
   name: 'ProductDetails',
@@ -45,9 +41,15 @@ const PRODUCT = {
   },
 })
 export default class ProductDetails extends Vue {
-  product = PRODUCT;
+  @Prop() product!: ShopProduct;
+
+  @shop.Action
+  addToCart!: (product: ShopProduct) => void;
+
+  handleAddToCart(e: Event): void {
+    e.stopPropagation();
+
+    this.addToCart(this.product);
+  }
 }
 </script>
-
-<style scoped>
-</style>

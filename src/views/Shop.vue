@@ -1,25 +1,23 @@
 <template>
-  <section>
-    <ProductList :products="products" />
-  </section>
+  <ProductList :products="shopProducts" />
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
 import ProductList from '@/components/shop/ProductList.vue';
 import { ShopProduct } from '@/models/product';
 
+const shop = namespace('shop');
+
 @Component({
+  name: 'Shop',
   components: {
     ProductList,
   },
 })
 export default class Home extends Vue {
-  products: ShopProduct[] = [];
-
-  async created(): Promise<void> {
-    const response = await fetch('/assets/products.json');
-    this.products = await response.json();
-  }
+  @shop.Getter
+  shopProducts!: ShopProduct[];
 }
 </script>

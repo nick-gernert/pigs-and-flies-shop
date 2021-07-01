@@ -1,10 +1,16 @@
 <template>
-  <div class="container mx-auto flex flex-col">
+  <div class="container mx-auto flex flex-col h-full">
     <div class="text-center my-8">
-      <input class="p-2 text-xl w-1/4" type="text" placeholder="Search" v-model="searchText" />
+      <input
+        class="p-2 text-xl w-1/4 rounded"
+        type="text"
+        placeholder="Search"
+        v-model="searchText" />
     </div>
-    <div class="grid grid-cols-4 gap-4">
-      <ProductItem v-for="product in displayProducts" :key="product.id" :product="product" />
+    <div class="my-auto">
+      <div class="grid grid-cols-4 gap-4">
+        <ProductItem v-for="product in displayProducts" :key="product.id" :product="product" />
+      </div>
     </div>
   </div>
 </template>
@@ -15,6 +21,7 @@ import ProductItem from '@/components/shop/ProductItem.vue';
 import { ShopProduct } from '@/models/product';
 
 @Component({
+  name: 'ProductList',
   components: {
     ProductItem,
   },
