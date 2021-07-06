@@ -6,7 +6,7 @@
     <div class="flex flex-col h-full text-center cursor-pointer" @click="navigateToDetails">
       <img :src="product.image" class="my-auto" :alt="product.name" />
       <div class="mt-auto">
-        <h4 class="text-3xl text-gray-500 font-bold my-4">{{ product.name }}</h4>
+        <h4 class="text-3xl text-gray-500 font-bold my-4 great-vibes">{{ product.name }}</h4>
         <ShopButton
           type="button"
           label="Add to Cart"
@@ -34,7 +34,7 @@ const shop = namespace('shop');
   },
 })
 export default class ProductItem extends Vue {
-  @Prop() product!: ShopProduct;
+  @Prop({ type: Object }) product!: ShopProduct;
 
   @shop.Action
   addToCart!: (product: ShopProduct) => void;
@@ -48,7 +48,7 @@ export default class ProductItem extends Vue {
   }
 
   navigateToDetails(): void {
-    this.$router.push(`${this.detailsLink}`);
+    this.$router.push(this.detailsLink);
   }
 
   handleAddToCart(e: Event): void {

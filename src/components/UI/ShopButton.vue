@@ -2,11 +2,21 @@
   <button
     :type="type"
     class="
-      p-2 block w-full text-lg bg-gradient-to-tr rounded from-pink-300 via-purple-300 to-indigo-400
-      hover:text-gray-500 hover:shadow-sm
+      p-2
+      block
+      w-full
+      text-lg
+      bg-gradient-to-tr
+      rounded
+      from-pink-300
+      via-purple-300
+      to-indigo-400
+      hover:text-gray-500
+      hover:shadow-sm
     "
     @click="handleClick"
-    :class="[colorClass, hoverClass]">
+    :class="[colorClass, hoverClass]"
+  >
     {{ label }}
   </button>
 </template>
@@ -24,7 +34,7 @@ export default class ShopButton extends Vue {
 
   @Prop() hoverClass!: string;
 
-  handleClick(e: Event):void {
+  handleClick(e: Event): void {
     this.$emit('click', e);
   }
 }

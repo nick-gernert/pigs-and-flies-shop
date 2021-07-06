@@ -42,7 +42,7 @@ export default class ShopModule extends VuexModule implements ShopState {
     const index = this.cartItems.findIndex((value) => value.product.id === product.id);
 
     if (this.cartItems[index].productCount === 1) {
-      this.cartItems = this.cartItems.splice(index, 1);
+      this.cartItems = this.cartItems.filter((val) => val.product.id !== product.id);
     } else {
       this.cartItems[index].productCount -= 1;
     }

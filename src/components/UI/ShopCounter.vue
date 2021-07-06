@@ -14,24 +14,24 @@
         "
         @click="handleDecrement"
       >
-        <span class="m-auto text-2xl font-thin">−</span>
+        <span class="m-auto text-2xl font-thin" v-if="count > 1">−</span>
+        <span v-else>
+          <img src="../../assets/trash.svg" class="m-auto h-6" alt="trash">
+        </span>
       </button>
-      <input
-        type="number"
+      <span
         class="
-          text-center
           w-full
           bg-gray-300
           text-md
-          hover:text-black
-          focus:text-black
-          md:text-basecursor-default
           flex
           items-center
+          justify-center
           text-gray-700
         "
-        :value="count"
-      />
+      >
+        {{ count }}
+      </span>
       <button
         type="button"
         class="

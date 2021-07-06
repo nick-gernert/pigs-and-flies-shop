@@ -1,5 +1,5 @@
 <template>
-  <main id="app" class="bg-indigo-200 min-h-screen flex flex-col">
+  <main id="app" class="min-h-screen flex flex-col">
     <ShopHeader />
     <router-view />
     <ShopFooter class="mt-auto" />
@@ -25,7 +25,6 @@ export default class extends Vue {
   loadProducts!: () => void;
 
   created(): void {
-    console.log('creating!');
     this.loadProducts();
   }
 }

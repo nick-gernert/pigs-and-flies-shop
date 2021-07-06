@@ -1,5 +1,5 @@
 <template>
-  <CartItemList :items="cartProducts" />
+  <CartItemList :items="cartProducts" cart-title="Your Cart" />
 </template>
 
 <script lang="ts">

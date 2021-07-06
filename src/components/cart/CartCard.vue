@@ -1,17 +1,19 @@
 <template>
-  <ShopCard class="bg-pink-200 border-2 border-indigo-500 my-2">
+  <ShopCard class="bg-pink-200 border-2 border-indigo-500 my-2 mx-4">
     <div class="flex">
-      <img :src="product.image" class="w-24" :alt="product.name" />
-      <div class="my-auto ml-8 w-full flex">
-        {{ product.name }}
-        <span class="ml-8">
+      <img :src="product.image" class="w-16 md:w-24" :alt="product.name" />
+      <div class="my-auto ml-8 w-full flex flex-col md:flex-row text-3xl text-gray-500">
+        <span class="great-vibes">{{ product.name }}</span>
+        <span class="mx-auto my-4 md:my-auto md:ml-8">
           <ShopCounter
             :count="item.productCount"
             @increment="handleIncrement"
             @decrement="handleDecrement"
           />
         </span>
-        <span class="ml-auto">{{ (item.productCount * product.price) | shopCurrency }}</span>
+        <span class="mx-auto md:ml-auto">
+          {{ (item.productCount * product.price) | shopCurrency }}
+        </span>
       </div>
     </div>
   </ShopCard>
