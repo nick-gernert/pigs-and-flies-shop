@@ -1,9 +1,9 @@
 <template>
-  <div class="flex my-auto" v-if="product">
-    <div class="w-1/2 flex">
+  <div class="flex flex-col md:flex-row my-auto" v-if="product">
+    <div class="md:w-1/2 flex">
       <img :src="product.image" class="m-auto w-1/2" :alt="product.name" />
     </div>
-    <div class="flex w-1/2 mx-4">
+    <div class="flex md:w-1/2 m-4">
       <ShopCard class="m-auto bg-pink-200 border-2 border-indigo-500">
         <ShopCardTitle>
           {{ product.name }}
