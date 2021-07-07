@@ -4,7 +4,6 @@ import {
   Mutation,
   Action,
 } from 'vuex-module-decorators';
-// eslint-disable-next-line import/no-cycle
 import { ShopProduct } from '@/models/product';
 import { CartItem } from '@/models/cart-item';
 import * as mutationTypes from '../mutation-types';
