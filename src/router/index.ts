@@ -20,6 +20,11 @@ const routes: Array<RouteConfig> = [
     name: 'Cart',
     component: () => import(/* webpackChunkName: "cart" */ '@/views/Cart.vue'),
   },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: () => import(/* webpackChunkName: "not-found" */ '@/views/PageNotFound.vue'),
+  },
 ];
 
 const router = new VueRouter({
