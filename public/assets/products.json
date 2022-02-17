@@ -9,14 +9,14 @@
   {
     "id": "2",
     "name": "White Guinea Pig",
-    "price": 99,
+    "price": 50,
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere veritatis necessitatibus distinctio rerum totam ad fugit voluptate eligendi. Eaque laboriosam animi sed. Ut sapiente est, corrupti alias debitis voluptate amet.",
     "image": "/img/white-with-brown.svg"
   },
   {
     "id": "3",
     "name": "Black Guinea Pig",
-    "price": 35,
+    "price": 50,
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere veritatis necessitatibus distinctio rerum totam ad fugit voluptate eligendi. Eaque laboriosam animi sed. Ut sapiente est, corrupti alias debitis voluptate amet.",
     "image": "/img/max.svg"
   },
